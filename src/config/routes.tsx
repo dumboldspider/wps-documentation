@@ -37,14 +37,14 @@ const routes: RouteConfig[] = [
     ],
   },
   {
-    label: "Getting Started",
+    label: "Components",
     icon: <FileImageFilled />,
-    path: "/getting-started",
+    path: "/",
     subitems: [
       {
-        label: "Introduction",
+        label: "Button",
         icon: <FileImageFilled />,
-        path: "/introduction",
+        path: "/components/button",
       },
     ],
   },

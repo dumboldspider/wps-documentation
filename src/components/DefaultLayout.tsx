@@ -49,20 +49,20 @@ function DocsLayout({
       <Flex mt={{ xs: -1, md: 2 }} p={2}>
         <Grid container>
           <Grid item xs={12} sm={2.5}>
-            <Fixed type="sticky" position="top">
-              <Hidden xs={true} md={false}>
-                <Container
-                  m={0}
-                  p={0}
-                  pb={2}
-                  style={{ overflow: "hidden" }}
-                  minHeight="100vh"
-                  // backgroundColor="transparent"
-                >
-                  <Sidebar />
-                </Container>
-              </Hidden>
-            </Fixed>
+            {/* <Fixed type="sticky" position="top"> */}
+            <Hidden xs={true} md={false} style={{ height: "100%" }}>
+              <Container
+                m={0}
+                p={0}
+                pb={2}
+                style={{ overflow: "hidden", height: "100%" }}
+                minHeight="100vh"
+                // backgroundColor="transparent"
+              >
+                <Sidebar />
+              </Container>
+            </Hidden>
+            {/* </Fixed> */}
           </Grid>
           <Grid item xs={12} sm={7}>
             <Container m={0} minHeight="100vh">
