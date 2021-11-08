@@ -622,10 +622,10 @@
     "@typescript-eslint/types" "4.33.0"
     eslint-visitor-keys "^2.0.0"
 
-"@wipsie/ui@^1.0.155":
-  version "1.0.155"
-  resolved "https://registry.yarnpkg.com/@wipsie/ui/-/ui-1.0.155.tgz#62ecbe306241e007e092572cb6a43c2e06c7d628"
-  integrity sha512-hBwIPkVaGR+4KxAQi3kF9y/VTCT4z0lpfcMcr24mbAvN1W3B2NMlrYAhmqYUqf1jZcAunj/e1mMn1DW9vkNdDQ==
+"@wipsie/ui@^1.0.156":
+  version "1.0.156"
+  resolved "https://registry.yarnpkg.com/@wipsie/ui/-/ui-1.0.156.tgz#3a07b9f1de79c529724ba30733e10122170eff28"
+  integrity sha512-fXAHmcxxL/goS9IIVqwcDgh9zQro3xTeQQUqRO9hXuZexDCfyvCAPoz5XGBmjVrKUSeyIzAL9h4fzylLwRy9hg==
   dependencies:
     classnames "^2.3.1"
     styled-jsx "^4.0.1"

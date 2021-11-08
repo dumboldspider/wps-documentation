@@ -10,7 +10,7 @@
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@mapbox/rehype-prism": "^0.8.0",
-    "@wipsie/ui": "^1.0.155",
+    "@wipsie/ui": "^1.0.156",
     "classnames": "^2.3.1",
     "gray-matter": "^4.0.3",
     "next": "12.0.3",

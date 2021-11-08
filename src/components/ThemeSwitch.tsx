@@ -8,6 +8,7 @@ import {
   Page,
   Switch,
   Flex,
+  IconButton,
 } from "@wipsie/ui";
 import { Sun, Moon, Star } from "react-feather";
 import useLocalStorage from "../hooks/useLocalStorage";
@@ -16,27 +17,27 @@ export default function ThemeSwitch({ currentTheme, setCurrentTheme }: any) {
   const theme = useTheme();
 
   return (
-    <ButtonGroup>
-      <Button
+    <ButtonGroup size="mini">
+      <IconButton
         variant={currentTheme === "light" ? "outlined" : "contained"}
         onClick={() => setCurrentTheme("light")}
       >
         <Sun />
-      </Button>
-      <Button
+      </IconButton>
+      <IconButton
         variant={currentTheme === "dark" ? "outlined" : "contained"}
         onClick={() => setCurrentTheme("dark")}
       >
         <Moon />
-      </Button>
-      <Button
+      </IconButton>
+      <IconButton
         variant={currentTheme === "cosmic" ? "outlined" : "contained"}
         onClick={() => {
           setCurrentTheme("cosmic");
         }}
       >
         <Star />
-      </Button>
+      </IconButton>
     </ButtonGroup>
   );
 }

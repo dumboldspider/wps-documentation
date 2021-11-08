@@ -1,7 +1,31 @@
-import { Flex, Link, Accordion, Button, Box, Container } from "@wipsie/ui";
+import { useState } from "react";
+import {
+  Flex,
+  Link,
+  Accordion,
+  Button,
+  Box,
+  Container,
+  Hidden,
+  Fixed,
+  IconButton,
+  useScrollBlock,
+} from "@wipsie/ui";
+import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
 import ThemeSwitch from "./ThemeSwitch";
+import Sidebar from "./Sidebar";
+import Portal from "./Portal";
+import responsive from "../utils/responsive";
 
 const Header = ({ currentTheme, setCurrentTheme }: any) => {
+  const [menuVisible, setMenuVisible] = useState(false);
+  const [locked, setLocked] = useScrollBlock();
+
+  const handleMenuClick = () => {
+    setMenuVisible(!menuVisible);
+    setLocked(!menuVisible);
+  };
+
   return (
     <Flex width="100vw" align="center" justify="center" p={0}>
       <Container
@@ -12,12 +36,52 @@ const Header = ({ currentTheme, setCurrentTheme }: any) => {
         justify="between"
         shape="square"
       >
-        {process.env.NODE_ENV}
-        <ThemeSwitch
-          currentTheme={currentTheme}
-          setCurrentTheme={setCurrentTheme}
-        />
+        <a href="https://wipsie.com" style={{ width: responsive(100, 200) }}>
+          <img src="/images/wipsie-logo.svg" alt="Wipsie Logo" />
+        </a>
+        <Flex direction="row" align="center" justify="between">
+          <ThemeSwitch
+            currentTheme={currentTheme}
+            setCurrentTheme={setCurrentTheme}
+          />
+          <Hidden xs={false} sm={true}>
+            <IconButton
+              size="large"
+              icon={<MenuOutlined />}
+              onClick={handleMenuClick}
+            />
+          </Hidden>
+        </Flex>
       </Container>
+
+      <Portal id="menu-portal" isOpen={menuVisible}>
+        <Hidden xs={false} sm={true}>
+          <Fixed type="fixed" style={{ width: "100vw" }}>
+            <Box height="100vh" width="100%" p={0}>
+              <Flex align="center" justify="between" p={2}>
+                <a
+                  href="https://wipsie.com"
+                  style={{ width: responsive(100, 200) }}
+                >
+                  <img src="/images/wipsie-logo.svg" alt="Wipsie Logo" />
+                </a>
+                <Flex direction="row" align="center" justify="between">
+                  <ThemeSwitch
+                    currentTheme={currentTheme}
+                    setCurrentTheme={setCurrentTheme}
+                  />
+                  <IconButton
+                    size="large"
+                    icon={<CloseOutlined />}
+                    onClick={handleMenuClick}
+                  />
+                </Flex>
+              </Flex>
+              <Sidebar />
+            </Box>
+          </Fixed>
+        </Hidden>
+      </Portal>
     </Flex>
   );
 };

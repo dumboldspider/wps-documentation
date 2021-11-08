@@ -46,11 +46,11 @@ function DocsLayout({
 
       <Header currentTheme={currentTheme} setCurrentTheme={setCurrentTheme} />
 
-      <Flex mt={5}>
+      <Flex mt={{ xs: -1, md: 2 }} p={2}>
         <Grid container>
           <Grid item xs={12} sm={2.5}>
             <Fixed type="sticky" position="top">
-              <Hidden>
+              <Hidden xs={true} md={false}>
                 <Container
                   m={0}
                   p={0}
@@ -71,7 +71,7 @@ function DocsLayout({
           </Grid>
           <Grid item xs={12} sm={2.5}>
             <Fixed type="sticky" position="top">
-              <Hidden>
+              <Hidden xs={true} md={false}>
                 <Container m={0}>
                   <ContentTable headings={headings} />
                 </Container>
