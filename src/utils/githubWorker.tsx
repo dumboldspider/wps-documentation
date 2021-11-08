@@ -2,7 +2,7 @@ import { RAW_GITHUB_URL, REPO_NAME, CONTENT_PATH } from "../config";
 import { getError } from "./error";
 
 export async function fetchRawDoc(doc: string, tag: string) {
-  return await getRawFileFromRepo(`${CONTENT_PATH}${doc}`, tag);
+  return await getRawFileFromRepo(`${CONTENT_PATH}/${doc}`, tag);
 }
 
 export async function getRawFileFromGitHub(path: string) {

@@ -17,7 +17,7 @@ const ContentTable = (props) => {
   );
 
   return (
-    <Flex>
+    <Flex direction="column">
       {headings.map((heading) => {
         return (
           <>
