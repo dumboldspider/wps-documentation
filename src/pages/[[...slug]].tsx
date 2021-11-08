@@ -49,6 +49,7 @@ export const getServerSideProps = async (context) => {
   if (isProd) {
     let rawMD = null,
       rawMDX = null;
+    console.log(currentPath, currentFile);
 
     try {
       rawMD = await fetchRawDoc(currentPath, currentFile + ".md");
