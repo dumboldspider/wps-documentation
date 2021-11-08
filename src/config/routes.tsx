@@ -1,21 +1,61 @@
 import { FileText } from "react-feather";
+import { FileImageFilled, CaretRightOutlined } from "@ant-design/icons";
 
 type RouteConfig = {
-  title: string;
+  label: string;
   icon?: any;
   path: string;
-  subroutes?: RouteConfig[];
+  subitems?: RouteConfig[];
 };
 
 const routes: RouteConfig[] = [
   {
-    title: "Getting Started",
-    icon: <FileText />,
+    label: "Guide",
+    icon: <FileImageFilled />,
     path: "/getting-started",
-    subroutes: [
+    subitems: [
       {
-        title: "Introduction",
-        icon: <FileText />,
+        label: "Getting Started",
+        icon: <CaretRightOutlined />,
+        path: "/getting-started",
+      },
+      {
+        label: "Introduction",
+        icon: <CaretRightOutlined />,
+        path: "/introduction",
+      },
+      {
+        label: "Introduction",
+        icon: <CaretRightOutlined />,
+        path: "/introduction",
+      },
+      {
+        label: "Introduction",
+        icon: <CaretRightOutlined />,
+        path: "/introduction",
+      },
+    ],
+  },
+  {
+    label: "Getting Started",
+    icon: <FileImageFilled />,
+    path: "/getting-started",
+    subitems: [
+      {
+        label: "Introduction",
+        icon: <FileImageFilled />,
+        path: "/introduction",
+      },
+    ],
+  },
+  {
+    label: "Getting Started",
+    icon: <FileImageFilled />,
+    path: "/getting-started",
+    subitems: [
+      {
+        label: "Introduction",
+        icon: <FileImageFilled />,
         path: "/introduction",
       },
     ],

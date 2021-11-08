@@ -21,6 +21,7 @@ import ContentTable from "./ContentTable";
 import Header from "./Header";
 import Footer from "./Footer";
 import Sidebar from "./Sidebar";
+
 import { getHeadings, Heading } from "../hooks/getHeadings";
 
 function DocsLayout({
@@ -40,33 +41,40 @@ function DocsLayout({
   // GET HEADINGS END
 
   return (
-    <Page>
+    <Page backgroundColor="shade">
       <Head {...meta} />
 
-      <Header />
+      <Header currentTheme={currentTheme} setCurrentTheme={setCurrentTheme} />
 
       <Flex mt={5}>
         <Grid container>
-          <Grid item xs={12} sm={2}>
+          <Grid item xs={12} sm={2.5}>
             <Fixed type="sticky" position="top">
               <Hidden>
-                <Box m={0} backgroundColor="primary">
+                <Container
+                  m={0}
+                  p={0}
+                  pb={2}
+                  style={{ overflow: "hidden" }}
+                  minHeight="100vh"
+                  // backgroundColor="transparent"
+                >
                   <Sidebar />
-                </Box>
+                </Container>
               </Hidden>
             </Fixed>
           </Grid>
-          <Grid item xs={12} sm={8}>
-            <Box m={0} minHeight="100vh" backgroundColor="secondary">
+          <Grid item xs={12} sm={7}>
+            <Container m={0} minHeight="100vh">
               {children}
-            </Box>
+            </Container>
           </Grid>
-          <Grid item xs={12} sm={2}>
+          <Grid item xs={12} sm={2.5}>
             <Fixed type="sticky" position="top">
               <Hidden>
-                <Box m={0} backgroundColor="success">
+                <Container m={0}>
                   <ContentTable headings={headings} />
-                </Box>
+                </Container>
               </Hidden>
             </Fixed>
           </Grid>

@@ -1,10 +1,12 @@
-import { Flex, Link, Accordion, Box } from "@wipsie/ui";
+import { Flex, Link, Accordion, Box, Container } from "@wipsie/ui";
 
 const Footer = () => {
   return (
-    <Box backgroundColor="red" width="100vw">
-      Footer
-    </Box>
+    <Flex width="100vw" mt={5}>
+      <Container shape="square" fullWidth>
+        Footer
+      </Container>
+    </Flex>
   );
 };
 

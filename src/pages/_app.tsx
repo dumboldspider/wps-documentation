@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }) {
     "light"
   );
   return (
-    <ThemeProvider theme={"dark"}>
+    <ThemeProvider theme={currentTheme}>
       <CssBaseline />
       <Component
         currentTheme={currentTheme}
