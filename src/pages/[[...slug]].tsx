@@ -63,6 +63,14 @@ export const getServerSideProps = async (context) => {
     }
 
     console.log(rawMD, rawMDX);
+    if (!rawMD && !rawMDX) {
+      return {
+        redirect: {
+          destination: "/",
+          permanent: false,
+        },
+      };
+    }
 
     let meta, doc;
     const { content, data } = matter(rawMD || rawMDX);
@@ -107,7 +115,7 @@ export const getServerSideProps = async (context) => {
 
       return {
         redirect: {
-          destination: "/getting-started",
+          destination: "/",
           permanent: false,
         },
       };
@@ -144,7 +152,7 @@ export const getServerSideProps = async (context) => {
 
     return {
       redirect: {
-        destination: "/getting-started",
+        destination: "/",
         permanent: false,
       },
     };
