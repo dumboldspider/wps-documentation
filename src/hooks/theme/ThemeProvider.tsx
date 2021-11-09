@@ -9,7 +9,7 @@ export const ThemeContext = createContext<any>({});
 type ThemeVariants = "light" | "dark" | "cosmic";
 
 export default function ThemeProvider({ defaultTheme, children }: any) {
-  const [theme, setTheme] = useState<ThemeVariants>(defaultTheme);
+  const [theme, setTheme] = useState<ThemeVariants>(defaultTheme || "light");
 
   // reading effect
   useEffect(() => {
