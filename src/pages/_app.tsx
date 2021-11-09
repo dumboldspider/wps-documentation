@@ -1,19 +1,21 @@
 import "../styles/global.css";
-import ThemeProvider from "../hooks/theme/ThemeProvider";
-import { parseCookies } from "nookies";
-
+// import ThemeProvider from "../hooks/theme/ThemeProvider";
+// import useLocalTheme from "../hooks/theme/useTheme";
+import { ThemeProvider as WipsieThemeProvider, CssBaseline } from "@wipsie/ui";
+import useLocalStorage from "../hooks/useLocalStorage";
+import { useEffect } from "react";
 const MyApp: React.FC<any> = ({ Component, pageProps }) => {
-  const cookies = parseCookies();
-  const defaultTheme = cookies._theme;
-
-  if (!defaultTheme) {
-    return null;
-  }
+  const [currentTheme, setCurrentTheme] = useLocalStorage("_theme", "light");
 
   return (
-    <ThemeProvider defaultTheme={defaultTheme}>
-      <Component {...pageProps} />
-    </ThemeProvider>
+    <WipsieThemeProvider theme={currentTheme}>
+      <CssBaseline />
+      <Component
+        currentTheme={currentTheme}
+        setCurrentTheme={setCurrentTheme}
+        {...pageProps}
+      />
+    </WipsieThemeProvider>
   );
 };
 

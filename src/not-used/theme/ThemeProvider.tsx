@@ -18,7 +18,7 @@ export default function ThemeProvider({ defaultTheme, children }: any) {
         ._theme) as ThemeVariants;
 
       console.log("====================================");
-      console.log("theme here", currentTheme);
+      console.log("current theme: ", currentTheme);
       console.log("====================================");
 
       if (currentTheme === undefined || currentTheme === null) {
