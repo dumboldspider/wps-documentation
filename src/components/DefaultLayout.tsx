@@ -50,7 +50,7 @@ function DocsLayout({
         <Grid container>
           <Grid item xs={12} sm={2.5}>
             {/* <Fixed type="sticky" position="top"> */}
-            <Hidden xs={true} md={false} style={{ height: "100%" }}>
+            <Hidden xs={true} sm={false} style={{ height: "100%" }}>
               <Container
                 m={0}
                 p={0}
@@ -71,7 +71,7 @@ function DocsLayout({
           </Grid>
           <Grid item xs={12} sm={2.5}>
             <Fixed type="sticky" position="top">
-              <Hidden xs={true} md={false}>
+              <Hidden xs={true} sm={false}>
                 <Container m={0}>
                   <ContentTable headings={headings} />
                 </Container>

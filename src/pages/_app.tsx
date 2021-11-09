@@ -1,23 +1,20 @@
 import "../styles/global.css";
-import { CssBaseline, ThemeProvider } from "@wipsie/ui";
-import useLocalStorage from "../hooks/useLocalStorage";
+import ThemeProvider from "../hooks/theme/ThemeProvider";
+import { parseCookies } from "nookies";
 
-function MyApp({ Component, pageProps }) {
-  const [currentTheme, setCurrentTheme] = useLocalStorage<string>(
-    "_theme",
-    "light"
-  );
+const MyApp: React.FC<any> = ({ Component, pageProps }) => {
+  const cookies = parseCookies();
+  const defaultTheme = cookies._theme;
+
+  if (!defaultTheme) {
+    return null;
+  }
 
   return (
-    <ThemeProvider theme={currentTheme}>
-      <CssBaseline />
-      <Component
-        currentTheme={currentTheme}
-        setCurrentTheme={setCurrentTheme}
-        {...pageProps}
-      />
+    <ThemeProvider defaultTheme={defaultTheme}>
+      <Component {...pageProps} />
     </ThemeProvider>
   );
-}
+};
 
 export default MyApp;

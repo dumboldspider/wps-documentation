@@ -9,12 +9,12 @@ import {
   Hidden,
   Fixed,
   IconButton,
+  Portal,
   useScrollBlock,
 } from "@wipsie/ui";
 import { MenuOutlined, CloseOutlined } from "@ant-design/icons";
 import ThemeSwitch from "./ThemeSwitch";
 import Sidebar from "./Sidebar";
-import Portal from "./Portal";
 import responsive from "../utils/responsive";
 
 const Header = ({ currentTheme, setCurrentTheme }: any) => {
@@ -54,7 +54,7 @@ const Header = ({ currentTheme, setCurrentTheme }: any) => {
         </Flex>
       </Container>
 
-      <Portal id="menu-portal" isOpen={menuVisible}>
+      <Portal id="menu-portal" visible={menuVisible}>
         <Hidden xs={false} sm={true}>
           <Fixed type="fixed" style={{ width: "100vw" }}>
             <Box height="100vh" width="100%" p={0}>
