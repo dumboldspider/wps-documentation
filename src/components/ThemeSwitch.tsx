@@ -12,7 +12,7 @@ import {
 } from "@wipsie/ui";
 import { Sun, Moon, Star } from "react-feather";
 import useLocalStorage from "../hooks/useLocalStorage";
-import useLocalTheme from "../hooks/theme/useTheme";
+// import useLocalTheme from "../hooks/theme/useTheme";
 
 export default function ThemeSwitch(props: any) {
   const theme = useTheme();
