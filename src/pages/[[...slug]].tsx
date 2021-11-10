@@ -16,8 +16,6 @@ import rehypePrism from "@mapbox/rehype-prism";
 // END MDX plugins
 
 export default function Home({
-  currentTheme,
-  setCurrentTheme,
   folderItems,
   source,
   meta,
@@ -27,12 +25,7 @@ export default function Home({
   const theme = useTheme();
 
   return (
-    <DefaultLayout
-      meta={meta}
-      routes={folderItems}
-      currentTheme={currentTheme}
-      setCurrentTheme={setCurrentTheme}
-    >
+    <DefaultLayout meta={meta} routes={folderItems}>
       {source && <MDXRemote {...source} components={customComponents} />}
     </DefaultLayout>
   );

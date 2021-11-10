@@ -17,7 +17,7 @@ import ThemeSwitch from "./ThemeSwitch";
 import Sidebar from "./Sidebar";
 import responsive from "../utils/responsive";
 
-const Header = ({ currentTheme, setCurrentTheme }: any) => {
+const Header = () => {
   const [menuVisible, setMenuVisible] = useState(false);
   const [locked, setLocked] = useScrollBlock();
 
@@ -40,10 +40,7 @@ const Header = ({ currentTheme, setCurrentTheme }: any) => {
           <img src="/images/wipsie-logo.svg" alt="Wipsie Logo" />
         </a>
         <Flex direction="row" align="center" justify="between">
-          <ThemeSwitch
-            currentTheme={currentTheme}
-            setCurrentTheme={setCurrentTheme}
-          />
+          <ThemeSwitch />
           <Hidden xs={false} sm={true}>
             <IconButton
               size="large"
@@ -66,10 +63,7 @@ const Header = ({ currentTheme, setCurrentTheme }: any) => {
                   <img src="/images/wipsie-logo.svg" alt="Wipsie Logo" />
                 </a>
                 <Flex direction="row" align="center" justify="between">
-                  <ThemeSwitch
-                    currentTheme={currentTheme}
-                    setCurrentTheme={setCurrentTheme}
-                  />
+                  <ThemeSwitch />
                   <IconButton
                     size="large"
                     icon={<CloseOutlined />}

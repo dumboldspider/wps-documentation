@@ -24,13 +24,7 @@ import Sidebar from "./Sidebar";
 
 import { getHeadings, Heading } from "../hooks/getHeadings";
 
-function DocsLayout({
-  meta,
-  routes,
-  currentTheme,
-  setCurrentTheme,
-  children,
-}: any) {
+function DocsLayout({ meta, routes, children }: any) {
   const theme = useTheme();
 
   // GET HEADINGS START
@@ -44,7 +38,7 @@ function DocsLayout({
     <Page backgroundColor="shade">
       <Head {...meta} />
 
-      <Header currentTheme={currentTheme} setCurrentTheme={setCurrentTheme} />
+      <Header />
 
       <Flex mt={{ xs: -1, md: 2 }} p={2}>
         <Grid container>
