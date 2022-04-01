@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  wps-documentation:
+    restart: unless-stopped
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - '5008:5008'
+    env_file:
+      - .env.local
+    stdin_open: true
+    volumes:
+       - .:/app
+      #  - /app/node_modules
